@@ -1,0 +1,42 @@
+{
+    "name": "metadocx/php-excel-converter",
+    "description": "Metadocx reporting MS Excel report converter.",
+    "license": [
+        "AGPL-3.0-or-later",
+        "MIT"
+    ],
+    "homepage": "https://www.metadocx.com",
+    "support": {
+        "issues": "https://github.com/metadocx/php-excel-converter/issues",
+        "source": "https://github.com/metadocx/php-excel-converter"
+    },
+    "authors": [
+        {
+            "name": "Benoit Gauthier",
+            "email": "bgauthier@metadocx.com"
+        }
+    ],    
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*"        
+    },    
+    "autoload": {
+        "psr-4": {
+            "Metadocx\\Reporting\\Converters\\Excel\\": "/src"                  
+        }
+    },
+    "extra": {      
+        "laravel": {
+            "providers": [
+                "Metadocx\\Reporting\\Converters\\Excel\\ExcelConverterServiceProvider"
+            ]
+        }
+    },    
+    "config": {
+        "sort-packages": true
+    },    
+    "minimum-stability": "dev",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "4.0.x-dev"
+    }
+}
