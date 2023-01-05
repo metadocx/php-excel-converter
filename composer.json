@@ -18,7 +18,8 @@
     ],    
     "require": {
         "php": "^7.3|^8.0",
-        "ext-json": "*"        
+        "ext-json": "*",
+        "phpoffice/phpspreadsheet": "dev-master"
     },    
     "autoload": {
         "psr-4": {
