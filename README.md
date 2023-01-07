@@ -1,2 +1,8 @@
 # php-excel-converter
-Converts report in Excel format
+Converts a metadocx report in Excel format
+
+## Quick start
+
+```
+composer require metadocx/php-excel-converter
+```
