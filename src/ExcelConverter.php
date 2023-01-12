@@ -3,6 +3,7 @@ namespace Metadocx\Reporting\Converters\Excel;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Arr;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
@@ -26,7 +27,9 @@ class ExcelConverter {
         foreach($aReportDefinition["sections"] as $aSection) {
 
             $colIndex = 1;
-            $sheet->setTitle($aSection["properties"]["name"]);
+            if (Arr::get($aSection, "properties.name", "") != "") {
+                $sheet->setTitle(Arr::get($aSection, "properties.name", ""));
+            }
 
             if (array_key_exists("model", $aSection)) {
                 foreach($aSection["model"] as $aColumn) {
